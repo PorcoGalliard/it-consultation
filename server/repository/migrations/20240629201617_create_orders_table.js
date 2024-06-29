@@ -6,7 +6,7 @@ exports.up = function (knex) {
     return knex.schema.createTable("orders", function (table) {
       table.uuid("id").primary().defaultTo(knex.raw("gen_random_uuid()"));
       table.string("total_biaya").notNullable();
-      table.string("rating").nullable();
+      table.integer("rating").nullable();
       table.text("review").nullable();
       table.uuid("user_id").nullable();
       table.uuid("consultant_id").nullable();

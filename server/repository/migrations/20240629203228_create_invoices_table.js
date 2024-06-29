@@ -3,7 +3,7 @@
  * @returns { Promise<void> }
  */
 exports.up = function (knex) {
-    return knex.schema.createTable("orders", function (table) {
+    return knex.schema.createTable("invoices", function (table) {
       table.uuid("id").primary().defaultTo(knex.raw("gen_random_uuid()"));
       table.string("invoice_number").defaultTo(knex.raw("gen_random_uuid")).notNullable();
       table.date("issue_date").defaultTo(knex.fn.now());
@@ -26,5 +26,5 @@ exports.up = function (knex) {
  * @returns { Promise<void> }
  */
 exports.down = function(knex) {
-  
+    return knex.schema.dropTable("invoices");
 };

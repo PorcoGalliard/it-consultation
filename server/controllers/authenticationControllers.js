@@ -101,7 +101,7 @@ class AuthController {
         process.env.ACCESS_TOKEN_SECRET,
         { expiresIn: "1h" }
       );
-      res.json({ message: "Login successful", accessToken });
+      res.json({ message: "Login successful", consultant_id: consultant.id, accessToken });
     } catch (error) {
       next(error);
     }

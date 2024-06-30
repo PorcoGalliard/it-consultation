@@ -1,7 +1,8 @@
 const express = require("express");
 const authenticationRoutes = require("./routes/authenticationRoutes");
+const serviceRoutes = require("./routes/serviceRoutes");
 const errorHandler = require("./middlewares/errorHandler");
-require('dotenv').config();
+require("dotenv").config();
 
 const app = express();
 const port = 3000;
@@ -11,6 +12,7 @@ app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
 
 app.use("/auth", authenticationRoutes);
+app.use("/consultant-services", serviceRoutes);
 app.use(errorHandler);
 
 app.use(function (req, res, next) {

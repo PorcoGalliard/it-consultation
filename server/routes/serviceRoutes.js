@@ -5,28 +5,19 @@ const { authenticateToken } = require("../middlewares/authenticateToken");
 const router = express.Router();
 
 // TODO: SEE ALL SERVICES
-router.get("/", (req, res) => {});
+router.get("/services", ConsultantServiceController.getAll);
 
-router.get("/:id", (req, res) => {});
+router.get(
+  "/services/:id",
+  param("id").notEmpty().withMessage("Service id is required"),
+  ConsultantServiceController.getById
+);
 
-// TODO: SEE SERVICES RATING
-router.get("/:id/rating", (req, res) => {});
-
-router.post("/:id/rating", (req, res) => {});
-
-// TODO: SEE ALL CONSULTANTS
-router.get("/consultants", (req, res) => {});
-
-router.get("/consultants/:id", (req, res) => {});
-
-router.get("/consultants/:id/services", (req, res) => {});
-
-// TODO: ORDER A SERVICE
-router.post("/order", (req, res) => {});
-
-router.patch("/order/:id", (req, res) => {});
-
-router.delete("/order/:id", (req, res) => {});
+router.get(
+  "/consultants/:consultantId/services",
+  param("consultantId").notEmpty().withMessage("Consultant ID is required"),
+  ConsultantServiceController.getByConsultantId
+);
 
 router.post(
   "/services",
@@ -67,3 +58,17 @@ router.delete(
   param("id").notEmpty().withMessage("Service ID is required"),
   ConsultantServiceController.remove
 );
+
+// TODO: ORDER A SERVICE
+router.post("/order", (req, res) => {});
+
+router.patch("/order/:id", (req, res) => {});
+
+router.delete("/order/:id", (req, res) => {});
+
+// TODO: SEE SERVICES RATING
+router.get("/:id/rating", (req, res) => {});
+
+router.post("/:id/rating", (req, res) => {});
+
+module.exports = router;

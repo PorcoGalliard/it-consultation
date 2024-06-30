@@ -5,6 +5,12 @@ const {
   deleteService,
 } = require("../models/ConsultantService");
 
+const {
+  getAllServices,
+  getServiceById,
+  getServicesByConsultantId,
+} = require("../models/Service");
+
 class ConsultantServiceContoller {
   static async create(req, res, next) {
     try {
@@ -42,6 +48,38 @@ class ConsultantServiceContoller {
       }
       await deleteService(id);
       res.json({ message: "Service deleted successfully" });
+    } catch (error) {
+      next(error);
+    }
+  }
+
+  static async getAll(req, res, next) {
+    try {
+      const services = await getAllServices();
+      res.status(200).json({ services: services });
+    } catch (error) {
+      next(error);
+    }
+  }
+
+  static async getById(req, res, next) {
+    try {
+      const { id } = req.params;
+      const service = await getServiceById(id);
+      if (!service) {
+        return res.status(404).json({ message: "Service not found" });
+      }
+      res.status(200).json(service);
+    } catch (error) {
+      next(error);
+    }
+  }
+
+  static async getByConsultantId(req, res, next) {
+    try {
+      const { consultantId } = req.params;
+      const services = await getServicesByConsultantId(consultantId);
+      res.status(200).json({ services: services });
     } catch (error) {
       next(error);
     }

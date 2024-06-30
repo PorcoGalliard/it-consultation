@@ -1,6 +1,7 @@
 const express = require("express");
 const authenticationRoutes = require("./routes/authenticationRoutes");
 const serviceRoutes = require("./routes/serviceRoutes");
+const orderRoutes = require("./routes/orderRoutes");
 const errorHandler = require("./middlewares/errorHandler");
 require("dotenv").config();
 
@@ -13,6 +14,7 @@ app.use(express.urlencoded({ extended: true }));
 
 app.use("/auth", authenticationRoutes);
 app.use("/consultant-services", serviceRoutes);
+app.use("/orders", orderRoutes);
 app.use(errorHandler);
 
 app.use(function (req, res, next) {

@@ -4,6 +4,10 @@ const AuthController = require("../controllers/authenticationControllers");
 const ConsultantController = require("../controllers/consultantsControllers");
 const router = express.Router();
 
+router.get("/sign-up-selection", (req, res) => {
+  res.render("authSelection")
+})
+
 // TODO: ADMIN
 router.get("/admin/login", (req, res) => {});
 

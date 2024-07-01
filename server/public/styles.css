@@ -109,6 +109,10 @@ body {
   align-items: center;
 }
 
+.intro__button a {
+  text-decoration: none;
+}
+
 .image-opening {
   transform: scaleX(-1);
   width: 400px;
@@ -386,4 +390,70 @@ body {
 .footer__nav-main {
   display: flex;
   gap: 40px;
+}
+
+.explore__registration {
+  margin-top: 30px;
+  display: flex;
+  flex-direction: row;
+  height: 400px;
+  background: rgb(245, 194, 146);
+  background: radial-gradient(rgb(245, 194, 146) 25%, rgb(241, 150, 65) 85%);
+  border-radius: 35px;
+}
+
+.explore__registration-text {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  gap: 40px;
+}
+
+.explore__registration-text h3 {
+  color: #fff;
+  font-family: "Righteous", sans-serif;
+  font-weight: 400;
+  font-style: normal;
+  font-size: 48px;
+  margin-bottom: 30px;
+}
+
+.explore__registration-text p {
+  margin-top: 50px;
+  color: #fff;
+  font-family: "Ubuntu", sans-serif;
+  font-weight: 400;
+  font-style: normal;
+  font-size: 20px;
+}
+
+.explore__registration-text a {
+  background: rgb(133, 100, 187);
+  background: linear-gradient(rgb(133, 100, 187) 0%, rgb(102, 44, 197) 85%);
+  border: 2px solid #e25300;
+  border-radius: 28px;
+  padding: 15px 45px;
+  color: #fff;
+  font-family: "Righteous", sans-serif;
+  font-weight: 400;
+  font-style: normal;
+  font-size: 28px;
+  text-decoration: none;
+}
+
+.explore__registration {
+  margin-top: 30px;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  height: 200px;
+  background: rgb(245, 194, 146);
+  background: radial-gradient(rgb(245, 194, 146) 25%, rgb(241, 150, 65) 85%);
+  border-radius: 35px;
+}
+
+.intro__button button {
+  cursor: pointer;
 }

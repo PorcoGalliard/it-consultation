@@ -5,8 +5,12 @@ const ConsultantController = require("../controllers/consultantsControllers");
 const router = express.Router();
 
 router.get("/sign-up-selection", (req, res) => {
-  res.render("authSelection")
-})
+  res.render("authSelection");
+});
+
+router.get("/log-in-selection", (req, res) => {
+  res.render("loginSelection");
+});
 
 // TODO: ADMIN
 router.get("/admin/login", (req, res) => {});

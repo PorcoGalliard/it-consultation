@@ -457,3 +457,11 @@ body {
 .intro__button button {
   cursor: pointer;
 }
+
+.header__nav a {
+  text-decoration: none;
+}
+
+.header__nav button {
+  cursor: pointer;
+}

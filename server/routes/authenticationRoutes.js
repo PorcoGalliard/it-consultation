@@ -10,7 +10,9 @@ router.get("/admin/login", (req, res) => {});
 router.post("/admin/login", (req, res) => {});
 
 // TODO: BUYER
-router.get("/user/login", (req, res) => {});
+router.get("/user/login", (req, res) => {
+  res.render("userLogin");
+});
 
 router.post(
   "/user/login",
@@ -21,7 +23,9 @@ router.post(
   AuthController.userLogin
 );
 
-router.get("/user/register", (req, res) => {});
+router.get("/user/register", (req, res) => {
+  res.render("userRegister");
+});
 
 router.post(
   "/user/register",
@@ -46,7 +50,9 @@ router.post(
 
 // TODO: CONSULTANT
 
-router.get("/consultant/login", (req, res) => {});
+router.get("/consultant/login", (req, res) => {
+  res.render("consultantLogin");
+});
 
 router.post(
   "/consultant/login",
@@ -57,7 +63,9 @@ router.post(
   AuthController.consultantLogin
 );
 
-router.get("/consultant/register", (req, res) => {});
+router.get("/consultant/register", (req, res) => {
+  res.render("consultantRegister");
+});
 
 router.post(
   "/consultant/register",
